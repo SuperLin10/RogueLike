@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameSpace;
-
+using UnityEngine.SceneManagement;
 
 public class UIMgr : MonoBehaviour
 {
@@ -20,5 +20,11 @@ public class UIMgr : MonoBehaviour
     {
         dayImage.gameObject.SetActive(false);
         Game.Instance.isEnd = false;
+    }
+
+    public void OnExitBtnClick()
+    {
+        Game.Instance.Init();
+        SceneManager.LoadScene("Menu");
     }
 }

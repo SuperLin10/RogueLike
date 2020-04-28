@@ -19,8 +19,8 @@ namespace GameSpace
         }
         private Game()
         {
-            cols = 30;
-            rows = 30;
+            cols = 12;
+            rows = 10;
         }
 
         public static Game Instance
@@ -31,7 +31,7 @@ namespace GameSpace
             }
         }
 
-        private int m_level = 2;
+        private int m_level = 1;
         private int m_rows = 0;
         private int m_cols = 0;
         private List<Enemy> m_enemys = new List<Enemy>();
@@ -45,8 +45,13 @@ namespace GameSpace
         public float m_rowMid = 0;
         public float m_colMid = 0;
         public Vector3 m_exitVector = new Vector3();
-        public int m_food = 200;
+        public int m_food = 60;
 
+        public void Init ()
+        {
+            Level = 1;
+            m_food = 60;
+        }
         public int Level
         {
             get
@@ -187,7 +192,7 @@ namespace GameSpace
             m_level = 1;
             m_food = 20;
             RemoveAllEnemy();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Main");
         }
         public void NextGame()
         {
@@ -195,7 +200,7 @@ namespace GameSpace
             rows++;
             cols++;
             RemoveAllEnemy();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Main");
         }
     }
 }

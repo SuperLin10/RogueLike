@@ -70,7 +70,7 @@ public class MapMgr : MonoBehaviour
             }
         }
         // 随机障碍物个数
-        int countWall = Random.Range(MinCountWall, MaxCountWall + 1);
+        int countWall = Random.Range(MinCountWall, MaxCountWall + Game.Instance.Level * 2);
         InstantiateItems(countWall, positionList, WallArr);
 
         // 生成食物 食物的数量 2 - level * 2;
